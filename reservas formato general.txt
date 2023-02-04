@@ -1,0 +1,8 @@
+reserva
+
+•	Nombre evento
+•	Fecha
+•	Hora
+•	Sala
+•	Cupo
+•	Campo para comentarios, dudas o ideas

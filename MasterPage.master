@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Security" %>
+
+
+
+<!DOCTYPE html>
+
+<SCRIPT runat="server">
+
+    public string PRESENT_LOGIN
+    {
+        get
+        {
+            return Convert.ToString(System.Security.Principal.WindowsIdentity.GetCurrent().Name);
+        }
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        /*
+        DataTable dt = sqlserver.Get("SELECT COUNT(1) FROM USUARIO WHERE LOGIN='" + this.PRESENT_LOGIN + "'");
+        if (Convert.ToInt32(dt.Rows[0][0]) == 0)
+            Response.Redirect("NotAllow.aspx");*/
+    }
+
+</SCRIPT>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Inscripción Charla</title>
+    <link href="App_Themes/Theme1/style.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="main_wrapper">
+        <div id="page_header">
+            <div id="page_title">
+                <h1>
+                    <asp:Image ID="Title" runat="server" ImageUrl="~/Images/homrHeader.png" />
+                </h1>
+            </div>
+            <ul id="menu">
+               
+            </ul>
+        </div>
+        <div id="page_menu">
+                        <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="MENU PRINCIPAL"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </div>
+    <div id="page_credit">
+            </div>
+    </form>
+</body>
+</html>
